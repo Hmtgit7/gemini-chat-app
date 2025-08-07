@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { SendHorizonalIcon } from "lucide-react";
 import ReactMarkdown from "react-markdown";
+import type { DetailedHTMLProps, HTMLAttributes } from "react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import vs2015 from "react-syntax-highlighter/dist/esm/styles/prism/atom-dark";
@@ -108,7 +109,8 @@ export default function Homepage() {
               >
                 <ReactMarkdown
                   components={{
-                    code({ inline, className, children }) {
+                    code: ({ inline, className, children }: DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement> & { inline?: boolean }) => {
+
                       const match = /language-(\w+)/.exec(className || "");
                       return !inline && match ? (
                         <SyntaxHighlighter
