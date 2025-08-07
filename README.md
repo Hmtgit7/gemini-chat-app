@@ -2,7 +2,7 @@
 
 A modern, full-stack AI chat application powered by Google's Gemini AI. Built with React, Django, and Tailwind CSS.
 
-![App Screenshot](public/screenshot.png)
+![App Screenshot](./public/image.png)
 
 ## ✨ Features
 
